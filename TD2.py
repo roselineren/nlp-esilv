@@ -264,7 +264,7 @@ if st.button('Analyser'):
     X_user_input = vectorizer.transform([processed_text]) 
     
     # Prédire le sentiment
-    prediction = model.predict([processed_text])
+    prediction = model.predict(X_user_input)
     
     # Afficher le résultat
     if prediction[0] == 1:  # Supposons que 1 soit pour "positif"
@@ -272,12 +272,6 @@ if st.button('Analyser'):
     else:  # Supposons que 0 soit pour "négatif"
         st.write("Le texte semble avoir un sentiment négatif.")
 
-
-
-# %%
-
-
-# %%
 
 
 
