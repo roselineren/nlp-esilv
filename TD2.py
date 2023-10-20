@@ -1,46 +1,4 @@
-# %% [markdown]
-# # TD2: Parts of Speech tagging for sentimment analysis
 
-# %% [markdown]
-# Part-of-speech tagging is the process of converting a sentence, in the form of a list of words,
-# into a list of tuples, where each tuple is of the form (word, tag). The tag is a part-of-speech
-# tag, and signifies whether the word is a noun, adjective, verb, and so on.
-# 
-# Most of the taggers are trainable. They use a list of tagged sentences as their training data, such as
-# what you get from the tagged_sents() method of a TaggedCorpusReader class. With these training
-# sentences, the tagger generates an internal model that will tell it how to tag a word. Other taggers
-# use external data sources or match word patterns to choose a tag for a word.
-# All taggers in NLTK are in the nltk.tag package. Many taggers can also be combined into a backoff
-# chain, so that if one tagger cannot tag a word, the next tagger is used, and so on.
-
-# %% [markdown]
-# Training a unigram part-of-speech tagger
-# 
-# UnigramTagger can be trained by giving it a list of tagged sentences at initialization.
-# 
-# >>> from nltk.tag import UnigramTagger
-# 
-# >>> from nltk.corpus import treebank
-# 
-# >>> train_sents = treebank.tagged_sents()[:3000]
-# 
-# >>> tagger = UnigramTagger(train_sents)
-# 
-# >>> treebank.sents()[0]
-# 
-# ['Pierre', 'Vinken', ',', '61', 'years', 'old', ',', 'will', 'join', 'the', 'board', 'as', 'a', 'nonexecutive', 'director','Nov.', '29', '.']
-# 
-# >>> tagger.tag(treebank.sents()[0])
-# 
-# [('Pierre', 'NNP'), ('Vinken', 'NNP'), (',', ','), ('61', 'CD'), ('years', 'NNS'), ('old', 'JJ'), (',', ','), ('will',
-# 'MD'), ('join', 'VB'), ('the', 'DT'), ('board', 'NN'), ('as', 'IN'), ('a', 'DT'), ('nonexecutive', 'JJ'),('director', 'NN'), ('Nov.', 'NNP'), ('29', 'CD'), ('.', '.')]
-
-# %% [markdown]
-# We use the first 3000 tagged sentences of the treebank corpus as the training set to
-# initialize the UnigramTagger class. Then, we see the first sentence as a list of words,
-# and can see how it is transformed by the tag() function into a list of tagged tokens.
-
-# %%
 import nltk
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
