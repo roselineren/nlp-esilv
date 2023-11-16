@@ -102,7 +102,7 @@ def main():
     st.title('Générateur de Questions Aléatoires avec BiomedBERT (la meilleure approche)')
 
     # Charger les questions
-    questions = load_questions('C:/Users/rosel/OneDrive/Documents/GitHub/nlp-esilv/project1-2023/dev.all.queries') 
+    questions = load_questions('C:/Users/rosel/OneDrive/Documents/GitHub/nlp-esilv/dev.all.queries') 
 
     # Bouton pour générer une nouvelle question
     if st.button('Générer une Question Aléatoire'):
