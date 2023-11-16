@@ -19,7 +19,7 @@ nltk.download('punkt')
 nb_docs=150
 
 def loadNFCorpus():
-	dir = "C:/Users/rosel/OneDrive/Documents/GitHub/nlp-esilv/project1-2023/"
+	dir = "C:/Users/rosel/OneDrive/Documents/GitHub/nlp-esilv/"
 	filename = dir +"dev.docs"
 
 	dicDoc={}
