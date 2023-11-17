@@ -19,8 +19,8 @@ nltk.download('punkt')
 nb_docs=150
 
 def loadNFCorpus():
-	dir = "C:/Users/rosel/OneDrive/Documents/GitHub/nlp-esilv/"
-	filename = dir +"dev.docs"
+	#dir = "C:/Users/rosel/OneDrive/Documents/GitHub/nlp-esilv/"
+	filename = "dev.docs"
 
 	dicDoc={}
 	with open(filename,encoding='utf-8') as file:
@@ -32,7 +32,7 @@ def loadNFCorpus():
 		value = tabLine[1]
 		#print(value)
 		dicDoc[key] = value
-	filename = dir + "dev.all.queries"
+	filename = "dev.all.queries"
 	dicReq={}
 	with open(filename,encoding='utf-8') as file:
 		lines = file.readlines()
@@ -41,7 +41,7 @@ def loadNFCorpus():
 		key = tabLine[0]
 		value = tabLine[1]
 		dicReq[key] = value
-	filename = dir + "dev.2-1-0.qrel"
+	filename = "dev.2-1-0.qrel"
 	dicReqDoc=defaultdict(dict)
 	with open(filename, encoding='utf-8') as file:
 		lines = file.readlines()
