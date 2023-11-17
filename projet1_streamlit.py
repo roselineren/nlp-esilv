@@ -114,7 +114,7 @@ def main():
         # Obtenir les top documents pour la question
         top_documents = get_top_documents_for_question(random_question, dic_doc, model_med, tokenizer_med, top_k=5)
 
-        st.write("Top 5 des documents pertinents :")
+        st.markdown("<h2 style='font-weight:bold;'>Top 5 des documents pertinents :</h2>", unsafe_allow_html=True)
         for doc_id, score in top_documents:
             st.write(f"ID: {doc_id}, Score: {score}")
             st.text(f"Document: {dic_doc[doc_id]}")
